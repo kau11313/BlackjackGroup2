@@ -2,10 +2,29 @@ package com.sheridancollege.blackjack;
 import java.util.ArrayList;
 
 public class GenericPlayer {
+	
+	//making one global object
+	private static GenericPlayer onlyObject=null;
 
 	private ArrayList<Card> hand;
 	private ArrayList<Card> second_hand;
-
+	
+	//making constructor private
+	
+	private GenericPlayer(){
+	}
+          
+	// using getInstance() method
+	
+	public static GenericPlayer getInstance(){
+              if(onlyObject==null)
+	      {
+		      onlyObject=new GenericPlayer();
+	      }
+		return onlyObject;
+	}
+	
+	
 	public ArrayList getHand() {
 		// TODO - implement GenericPlayer.getHand
 		throw new UnsupportedOperationException();
