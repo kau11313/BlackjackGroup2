@@ -1,10 +1,32 @@
+
 package com.sheridancollege.blackjack;
 import java.util.ArrayList;
 
 public class Dealer extends GenericPlayer {
 
+	//create one global object
+	private static Dealer onlyObject=null;
+	
+	//private constructor
+	private Dealer(){
+	
+	}
+	
 	private ArrayList<Card> deck;
 
+	
+	//using getInstance() method
+	
+	public static Dealer getInstance()
+	{
+		if(onlyObject==null)
+		{
+		onlyObject=new Dealer();
+		}
+		return onlyObject;
+	}
+	
+	
 	public void dealCards() {
 		// TODO - implement Dealer.dealCards
 		throw new UnsupportedOperationException();
